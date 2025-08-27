@@ -10,7 +10,7 @@ int main() {
     // Você pode utilizar o código do primeiro desafio
 
     //Definição das variáveis da carta 1
-    char estadoA[20];
+    char estadoA[30];
     char codA[5];
     char cidadeA[30];
     unsigned long int populacaoA;
@@ -22,7 +22,7 @@ int main() {
     float superPoderA;
 
     //Definição das variáveis da carta 2
-    char estadoB[20];
+    char estadoB[30];
     char codB[5];
     char cidadeB[30];
     unsigned long int populacaoB;
@@ -45,7 +45,6 @@ int main() {
     // 
     // (Repita para cada propriedade)
 
-    /*
     //Cadastro da carta 1
     printf("Cadastro da Carta 1\n");
 
@@ -93,26 +92,25 @@ int main() {
 
     printf("Informe o número de pontos turísticos da cidade: ");
     scanf("%u", &ptsTurismoB);   //Leitura do número de pontos turísticos da cidade informados e armazenamento do valor na variável ptsTurismoB 
-    */
 
+    /*
     // Cadastro de informações apenas para facilitar a execução do desafio
-
-    estadoA = "Espírito Santo";
-    codA = "ES";
-    cidadeA = "Serra";
+    estadoA[30] = 'Amapa';
+    codA[5] = 'ES';
+    cidadeA[30] = 'Serra';
     areaA = 234.6;
     populacaoA = 324000;
     pibA = 23.2;
     ptsTurismoA = 97;
 
-    estadoB = "Bahia";
-    codB = "BA";
-    cidadeB = "Salvador";
+    estadoB[30] = 'Bahia';
+    codB[5] = 'BA';
+    cidadeB[30] = 'Salvador';
     areaB = 134.6;
     populacaoB = 424000;
     pibB = 13.2;
     ptsTurismoB = 197;    
-
+    */
 
     // Cálculo da Densidade Demográfica
     densidadeDemograficaA = populacaoA / areaA;
@@ -126,7 +124,6 @@ int main() {
     superPoderA = populacaoA + areaA + pibA + perCapitaA + ptsTurismoA + (1 / densidadeDemograficaA);
     superPoderB = populacaoB + areaB + pibB + perCapitaB + ptsTurismoB + (1 / densidadeDemograficaB);
 
-
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
@@ -138,7 +135,15 @@ int main() {
     //     printf("Cidade 2 tem maior população.\n");
     // }
 
+    printf("*** COMPARAÇÃO DE CARTAS (Atributo: PIB per Capita)*** \n");
+    printf("Carta 1 - %s (%s): R$ %.2f reais \n", cidadeA, codA, perCapitaA);
+    printf("Carta 2 - %s (%s): R$ %.2f reais \n", cidadeB, codB, perCapitaB);
 
+    if (perCapitaA > perCapitaB){
+        printf("Carta 1 (%s - %s) venceu!\n", cidadeA, codA);
+    } else{
+        printf("Carta 2 (%s - %s) venceu!\n", cidadeB, codB);        
+    }
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
