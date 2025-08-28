@@ -6,13 +6,14 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
+    
     // Definição das variáveis para armazenar as propriedades das cidades
     // Você pode utilizar o código do primeiro desafio
 
     //Definição das variáveis da carta 1
-    char estadoA[30];
+    char estadoA[50];
     char codA[5];
-    char cidadeA[30];
+    char cidadeA[50];
     unsigned long int populacaoA;
     unsigned int ptsTurismoA;
     float areaA;
@@ -22,9 +23,9 @@ int main() {
     float superPoderA;
 
     //Definição das variáveis da carta 2
-    char estadoB[30];
+    char estadoB[50];
     char codB[5];
-    char cidadeB[30];
+    char cidadeB[50];
     unsigned long int populacaoB;
     unsigned int ptsTurismoB;
     float areaB;
@@ -33,7 +34,6 @@ int main() {
     float densidadeDemograficaB;
     float superPoderB;
 
-    
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
     // utilizando a função scanf para capturar as entradas.
@@ -48,12 +48,15 @@ int main() {
     //Cadastro da carta 1
     printf("Cadastro da Carta 1\n");
 
-    printf("Informe o estado: ");
+    //Ao digitar o nome do estado, utilizar _ no lugar do espaço em nomes compostos. Ex.: Sao_Paulo; Rio_de_Janeiro
+    printf("Informe o estado: ");  
     scanf("%s", estadoA); //Leitura do nome informado e armazenamento do valor na variável estadoA
 
+    //Usar como código a sigla do estado. Ex.: Sao_Paulo - SP; Bahia - BA
     printf("Informe o código da cidade: ");
     scanf("%s", codA); //Leitura do código informado e armazenamento do valor na variável codA    
 
+    //Ao digitar o nome da cidade, utilizar _ no lugar do espaço em nomes compostos. Ex.: Sao_Paulo; Rio_de_Janeiro
     printf("Informe o nome da cidade: ");
     scanf("%s", cidadeA); //Leitura do nome informado e armazenamento do valor na variável cidadeA
 
@@ -93,24 +96,6 @@ int main() {
     printf("Informe o número de pontos turísticos da cidade: ");
     scanf("%u", &ptsTurismoB);   //Leitura do número de pontos turísticos da cidade informados e armazenamento do valor na variável ptsTurismoB 
 
-    /*
-    // Cadastro de informações apenas para facilitar a execução do desafio
-    estadoA[30] = 'Amapa';
-    codA[5] = 'ES';
-    cidadeA[30] = 'Serra';
-    areaA = 234.6;
-    populacaoA = 324000;
-    pibA = 23.2;
-    ptsTurismoA = 97;
-
-    estadoB[30] = 'Bahia';
-    codB[5] = 'BA';
-    cidadeB[30] = 'Salvador';
-    areaB = 134.6;
-    populacaoB = 424000;
-    pibB = 13.2;
-    ptsTurismoB = 197;    
-    */
 
     // Cálculo da Densidade Demográfica
     densidadeDemograficaA = populacaoA / areaA;
@@ -135,14 +120,14 @@ int main() {
     //     printf("Cidade 2 tem maior população.\n");
     // }
 
-    printf("*** COMPARAÇÃO DE CARTAS (Atributo: PIB per Capita)*** \n");
+    printf("\n*** COMPARAÇÃO DE CARTAS (Atributo: PIB per Capita)*** \n");
     printf("Carta 1 - %s (%s): R$ %.2f reais \n", cidadeA, codA, perCapitaA);
     printf("Carta 2 - %s (%s): R$ %.2f reais \n", cidadeB, codB, perCapitaB);
 
     if (perCapitaA > perCapitaB){
-        printf("Carta 1 (%s - %s) venceu!\n", cidadeA, codA);
+        printf("Resultado: Carta 1 (%s - %s) venceu!\n", cidadeA, codA);
     } else{
-        printf("Carta 2 (%s - %s) venceu!\n", cidadeB, codB);        
+        printf("Resultado: Carta 2 (%s - %s) venceu!\n", cidadeB, codB);        
     }
 
     // Exibição dos Resultados:
