@@ -33,7 +33,7 @@ int main() {
     float superPoderB;
 
     // Outras variáveis - criadas para possibilitar a criação do menu interativo e a comparação entre cartas
-    int opcao, atributo;
+    int opcao, atributo, atributo1, atributo2;
 
     // Cabeçalho do jogo
     printf("--- JOGO SUPER TRUNFO ---\n");
@@ -217,8 +217,8 @@ int main() {
                 case 6:
                     // codigo comparacao superpoder
                     printf("Atributo escolhido: SUPER PODER\n");
-                    printf("CARTA 1: %s (%s): %.2f.\n", cidadeA, codA, superPoderA);
-                    printf("CARTA 2: %s (%s): %.2f.\n", cidadeB, codB, superPoderB);
+                    printf("CARTA 1: %s (%s): %.2f \n", cidadeA, codA, superPoderA);
+                    printf("CARTA 2: %s (%s): %.2f \n", cidadeB, codB, superPoderB);
                     if(superPoderA > superPoderB){
                         printf("Resultado: CARTA 1 Venceu!\n");
                     } else if(superPoderA < superPoderB){
@@ -235,7 +235,55 @@ int main() {
         break;
 
         case 3:
-            // nível mestre
+            // definir atributo e comparar cartas - Nível mestre
+            // Escolha do atributo para comparação
+            printf("*** ATRIBUTOS ***\n");
+            printf("1. POPULAÇÃO\n");
+            printf("2. ÁREA\n");
+            printf("3. PIB\n");
+            printf("4. PONTOS TURÍSTICOS\n");
+            printf("5. DENSIDADE DEMOGRÁFICA\n");
+            printf("6. SUPERPODER\n");
+            printf("Escolha o primeiro atributo: ");
+            scanf("%d", &atributo1);
+            printf("Escolha o segundo atributo: ");
+            scanf("%d", &atributo2);
+
+            // Verifica se os atributos são iguais
+            if (atributo1 == atributo2) {
+                printf("Os atributos são iguais! \n");
+            } else if (atributo1 > 6 || atributo2 > 6){
+                printf("Atributo escolhido não válido!")
+            }
+            
+            
+            else {
+                // Comparação entre cartas
+                switch (atributo1){
+                    case 1:
+                        resultado1 = (populacaoA > populacaoB) ? 1 : 0;
+                    break;
+                    case 2:
+
+                    break;
+                    case 3:
+
+                    break;
+                    case 4:
+
+                    break;
+                    case 5:
+
+                    break;
+                    case 6:
+
+                    break;
+                    default:
+
+                    break;
+                }
+            }
+
             printf("Nível Mestre em desenvolvimento! Aguarde...");
         break;
 
