@@ -33,7 +33,7 @@ int main() {
     float superPoderB;
 
     // Outras variáveis - criadas para possibilitar a criação do menu interativo e a comparação entre cartas
-    int opcao, atributo, atributo1, atributo2;
+    int opcao, atributo, atributo1, atributo2, resultado1, resultado2;
 
     // Cabeçalho do jogo
     printf("--- JOGO SUPER TRUNFO ---\n");
@@ -244,54 +244,177 @@ int main() {
             printf("4. PONTOS TURÍSTICOS\n");
             printf("5. DENSIDADE DEMOGRÁFICA\n");
             printf("6. SUPERPODER\n");
+
             printf("Escolha o primeiro atributo: ");
             scanf("%d", &atributo1);
+
             printf("Escolha o segundo atributo: ");
             scanf("%d", &atributo2);
 
             // Verifica se os atributos são iguais
-            if (atributo1 == atributo2) {
+            if (atributo1 == atributo2){
                 printf("Os atributos são iguais! \n");
             } else if (atributo1 > 6 || atributo2 > 6){
-                printf("Atributo escolhido não válido!")
-            }
-            
-            
-            else {
+                printf("Atributo escolhido não válido!");
+            } else{
                 // Comparação entre cartas
                 switch (atributo1){
                     case 1:
                         resultado1 = (populacaoA > populacaoB) ? 1 : 0;
+                        if (resultado1 == 1){
+                            printf("** Atributo População ** - CARTA 1 VENCEU! (Carta 1: %lu | Carta 2: %lu) \n", populacaoA, populacaoB);
+                        } else if (resultado1 == 0){
+                            printf("** Atributo População ** - CARTA 2 VENCEU! (Carta 1: %lu | Carta 2: %lu) \n", populacaoA, populacaoB);
+                        } else{
+                            printf("** Atributo População ** - EMPATOU! (Carta 1: %lu | Carta 2: %lu) \n", populacaoA, populacaoB);
+                        }
                     break;
+
                     case 2:
-
+                        resultado1 = (areaA > areaB) ? 1 : 0;
+                        if (resultado1 == 1){
+                            printf("** Atributo Área ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", areaA, areaB);
+                        }else if (resultado1 == 0){
+                            printf("** Atributo Área ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", areaA, areaB);
+                        }else{
+                            printf("** Atributo Área ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", areaA, areaB);
+                        }
                     break;
+
                     case 3:
-
+                        resultado1 = (pibA > pibB) ? 1 : 0;
+                        if (resultado1 == 1){
+                            printf("** Atributo PIB ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", pibA, pibB);
+                        }else if (resultado1 == 0){
+                            printf("** Atributo PIB ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", pibA, pibB);
+                        }else{
+                            printf("** Atributo PIB ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", pibA, pibB);
+                        }
                     break;
+
                     case 4:
-
+                        resultado1 = (ptsTurismoA > ptsTurismoB) ? 1 : 0;
+                        if (resultado1 == 1){
+                            printf("** Atributo Pontos Turísticos ** - CARTA 1 VENCEU! (Carta 1: %d | Carta 2: %d) \n", ptsTurismoA, ptsTurismoB);
+                        }else if (resultado1 == 0){
+                            printf("** Atributo Pontos Turísticos ** - CARTA 2 VENCEU! (Carta 1: %d | Carta 2: %d) \n", ptsTurismoA, ptsTurismoB);
+                        }else{
+                            printf("** Atributo Pontos Turísticos ** - EMPATOU! (Carta 1: %d | Carta 2: %d) \n", ptsTurismoA, ptsTurismoB);
+                        }
                     break;
+
                     case 5:
-
+                        resultado1 = (densidadeDemograficaA < densidadeDemograficaB) ? 1 : 0;
+                        if (resultado1 == 1){
+                            printf("** Atributo Densidade Demográfica ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", densidadeDemograficaA, densidadeDemograficaB);
+                        }else if (resultado1 == 0){
+                            printf("** Atributo Densidade Demográfica ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", densidadeDemograficaA, densidadeDemograficaB);
+                        }else{
+                            printf("** Atributo Densidade Demográfica ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", densidadeDemograficaA, densidadeDemograficaB);
+                        }
                     break;
+
                     case 6:
-
+                        resultado1 = (superPoderA > superPoderB) ? 1 : 0;
+                        if (resultado1 == 1){
+                            printf("** Atributo Super Poder ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", superPoderA, superPoderB);
+                        }else if (resultado1 == 0){
+                            printf("** Atributo Super Poder ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", superPoderA, superPoderB);
+                        }else{
+                            printf("** Atributo Super Poder ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", superPoderA, superPoderB);
+                        }
                     break;
-                    default:
 
+                    default:
+                        printf("Algo deu errado! Tente novamente.\n");
                     break;
                 }
-            }
+                switch (atributo2){
+                    case 1:
+                        resultado2 = (populacaoA > populacaoB) ? 1 : 0;
+                        if (resultado2 == 1){
+                            printf("** Atributo População ** - CARTA 1 VENCEU! (Carta 1: %lu | Carta 2: %lu) \n", populacaoA, populacaoB);
+                        } else if (resultado2 == 0){
+                            printf("** Atributo População ** - CARTA 2 VENCEU! (Carta 1: %lu | Carta 2: %lu) \n", populacaoA, populacaoB);
+                        } else{
+                            printf("** Atributo População ** - EMPATOU! (Carta 1: %lu | Carta 2: %lu) \n", populacaoA, populacaoB);
+                        }
+                    break;
 
-            printf("Nível Mestre em desenvolvimento! Aguarde...");
+                    case 2:
+                        resultado2 = (areaA > areaB) ? 1 : 0;
+                        if (resultado2 == 1){
+                            printf("** Atributo Área ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", areaA, areaB);
+                        }else if (resultado2 == 0){
+                            printf("** Atributo Área ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", areaA, areaB);
+                        }else{
+                            printf("** Atributo Área ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", areaA, areaB);
+                        }
+                    break;
+
+                    case 3:
+                        resultado2 = (pibA > pibB) ? 1 : 0;
+                        if (resultado2 == 1){
+                            printf("** Atributo PIB ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", pibA, pibB);
+                        }else if (resultado2 == 0){
+                            printf("** Atributo PIB ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", pibA, pibB);
+                        }else{
+                            printf("** Atributo PIB ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", pibA, pibB);
+                        }
+                    break;
+
+                    case 4:
+                        resultado2 = (ptsTurismoA > ptsTurismoB) ? 1 : 0;
+                        if (resultado2 == 1){
+                            printf("** Atributo Pontos Turísticos ** - CARTA 1 VENCEU! (Carta 1: %d | Carta 2: %d) \n", ptsTurismoA, ptsTurismoB);
+                        }else if (resultado2 == 0){
+                            printf("** Atributo Pontos Turísticos ** - CARTA 2 VENCEU! (Carta 1: %d | Carta 2: %d) \n", ptsTurismoA, ptsTurismoB);
+                        }else{
+                            printf("** Atributo Pontos Turísticos ** - EMPATOU! (Carta 1: %d | Carta 2: %d) \n", ptsTurismoA, ptsTurismoB);
+                        }
+                    break;
+
+                    case 5:
+                        resultado2 = (densidadeDemograficaA < densidadeDemograficaB) ? 1 : 0;
+                        if (resultado2 == 1){
+                            printf("** Atributo Densidade Demográfica ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", densidadeDemograficaA, densidadeDemograficaB);
+                        }else if (resultado2 == 0){
+                            printf("** Atributo Densidade Demográfica ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", densidadeDemograficaA, densidadeDemograficaB);
+                        }else{
+                            printf("** Atributo Densidade Demográfica ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", densidadeDemograficaA, densidadeDemograficaB);
+                        }
+                    break;
+
+                    case 6:
+                        resultado2 = (superPoderA > superPoderB) ? 1 : 0;
+                        if (resultado2 == 1){
+                            printf("** Atributo Super Poder ** - CARTA 1 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", superPoderA, superPoderB);
+                        }else if (resultado2 == 0){
+                            printf("** Atributo Super Poder ** - CARTA 2 VENCEU! (Carta 1: %.2f | Carta 2: %.2f) \n", superPoderA, superPoderB);
+                        }else{
+                            printf("** Atributo Super Poder ** - EMPATOU! (Carta 1: %.2f | Carta 2: %.2f) \n", superPoderA, superPoderB);
+                        }
+                    break;
+
+                    default:
+                        printf("Algo deu errado! Tente novamente.\n");
+                    break;
+                }
+                
+                if (resultado1 == 0 && resultado2 == 0){
+                    printf("CARTA 1 PERDEU\n!");
+                } else if (resultado1 == 1 && resultado2 == 1){
+                    printf("CARTA 1 VENCEU!\n");
+                } else{
+                    printf("EMPATOU!\n");
+                }
+            }
         break;
 
         default:
             printf("Opção inválida!\n");
         break;
     }
-    
     return 0;
 
 }
